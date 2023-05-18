@@ -3,7 +3,7 @@ const statusElement = document.getElementById("status");
 
 let countDown = setInterval(function() {
 	timer--;
-	timerElement.textContent = formatTime(timer);
+	timerElement.innerText(timer);
 
 	if (timer <= 0) {
 		clearInterval(countDown);
