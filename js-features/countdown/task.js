@@ -1,12 +1,13 @@
 const timerElement = document.getElementById("timer");
+let timer = timerElement.textContent;
 
 let countDown = setInterval(function() {
-	let timer = document.getElementById("timer").textContent;
 	timer--;
-	document.getElementById("timer") = timer;
+	timerElement.textContent = timer;
 
+	
 	if (timer <= 0) {
-		clearInterval(countDown);
 		alert("Вы победили в конкурсе!");
+		clearInterval(countDown);
 	}
 }, 1000);
