@@ -8,6 +8,22 @@ holes.forEach((node) => {
     Arr.push(node);
   });
   
-  for (let i = 1; i <= Arr.length; i++) {
-   if (Arr(i).classList.contains("hole_has-mole"))
+  
+  for (let i = 1; i <= Arr.length; i++)
+  
+  
+  Arr.onclick = function () {
+   if (Arr(i).classList.contains("hole_has-mole")) {
+      deadCount++;
+      document.getElementById("dead").textContent = deadCount;
+		if (deadCount === 10) {
+				alert("Вы выиграли!");
+      } else {
+      lostCount++;
+      document.getElementById("lost").textContent = lostCount;
+		if (lostCount === 5) {
+				alert("Вы проиграли!");
+   };
+  };
+}
   }
