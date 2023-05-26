@@ -13,16 +13,23 @@ Arr.forEach((item) => {
         document.getElementById("dead").textContent = deadCount;
 			if (deadCount === 10) {
 				alert("Вы выиграли!");
-				resetCounts();
+				newGame();
 			}
        } else {
           lostCount++;
           document.getElementById("lost").textContent = lostCount;
           if (lostCount === 5) {
             alert('Вы проиграли!');
-            resetCounts();
+            newGame();
           }
         }
       };
     });
+  
+    function newGame() {
+      deadCount = 0;
+      lostCount = 0;
+      document.getElementById('dead').textContent = deadCount;
+      document.getElementById('lost').textContent = lostCount;
+    }
         
