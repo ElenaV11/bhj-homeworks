@@ -17,14 +17,12 @@ Arr.forEach((item) => {
 			}
       if (deadCount >= 10) {
         alert('Победа!');
-        dead = 0;
-        lost = 0;
+        
     }
 
       if (lostCount >= 5) {
         alert('Вы проиграли!');
-        dead = 0;
-        lost = 0;
+      
     }
 
     deadCount.textContent = dead;
