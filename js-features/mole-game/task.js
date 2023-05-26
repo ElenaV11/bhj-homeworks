@@ -1,5 +1,3 @@
-const dead = document.getElementById("dead");
-const lost = document.getElementById("lost");
 let deadCount = 0;
 let lostCount = 0;
 const holes = document.querySelectorAll(".hole");
@@ -12,20 +10,19 @@ Arr.forEach((item) => {
     item.onclick = () => {  
       if (item.classList.contains("hole_has-mole")){
         deadCount++;
-       } else {
-       lostCount++;
+        document.getElementById("dead").textContent = deadCount;
+			if (deadCount === 10) {
+				alert("Вы выиграли!");
+				resetCounts();
 			}
-      if (deadCount >= 10) {
-        alert('Победа!');
+       } else {
+          lostCount++;
+          document.getElementById("lost").textContent = lostCount;
+          if (lostCount === 5) {
+            alert('Вы проиграли!');
+            resetCounts();
+          }
+        }
+      };
+    });
         
-    }
-
-      if (lostCount >= 5) {
-        alert('Вы проиграли!');
-      
-    }
-
-    deadCount.textContent = dead;
-    lostCount.textContent = lost;
-};
-})
