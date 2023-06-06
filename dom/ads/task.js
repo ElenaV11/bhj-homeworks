@@ -7,7 +7,7 @@ function rotate() {
     
             const nextEl = (i + 1) % cases.length;
             cases[nextEl].classList.add("rotator__case_active"); 
-		
+		 break;
 		}
 	}
 }
