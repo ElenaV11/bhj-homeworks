@@ -35,6 +35,3 @@ template.innerHTML = templateHTML;
 return template.content.firstChild
 
 
-btnProduct.addEventListener('click', () => {
-   
-})
