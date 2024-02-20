@@ -25,13 +25,6 @@ btnPlus.forEach((plus, element) => {
 	});
 });
 
-let templateHTML = `<div class="cart__product" data-id="1">
-    <img class="cart__product-image" src="image.png">
-    <div class="cart__product-count">20</div>
-</div>`
-templateHTML = templateHTML.trim();
-const template = document.createElement('template');
-template.innerHTML = templateHTML;
-return template.content.firstChild
+
 
 
