@@ -10,8 +10,7 @@ fontSizes.forEach((fontSize) => {
 		fontSize.classList.add("font-size_active");
 
 		const size = fontSize.getAttribute("data-size");
-
-		const book = document.querySelector("#book");
+        const book = document.querySelector("#book");
 		book.classList.remove("book_fs-small", "book_fs-big");
 
 		if (size === "small") {
