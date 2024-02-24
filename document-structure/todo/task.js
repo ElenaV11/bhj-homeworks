@@ -30,7 +30,7 @@ function addTask(e) {
 	if (title !== '') {
 		const task = createTask(title);
 		tasksList.appendChild(task);
-		taskInput[type='reset'];
+		document.getElementById('tasks__form').reset();
 	}
 }
 
