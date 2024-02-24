@@ -25,16 +25,30 @@ btnPlus.forEach((plus, element) => {
 	});
 });
 
-let templateHTML = 
-       `<div class="cart__product" data-id="${id}">
-        <img class="cart__product-image" src="${imageLink}">
-        <div class="cart__product-count">${count}</div>
-    </div>`;
-    templateHTML = templateHTML.trim();
-    const template = document.createElement("template");
-    template.innerHTML = templateHTML;
-    return template.content.firstChild
-
+btnProduct.forEach((button, index) => {
+	button.addEventListener('click', () => {
+		product = products[index];
+		const productId = product.dataset.id;
+		const productImage = product.querySelector('.product__image').getAttribute('src');
+		const quantityNumber = parseInt(numberProduct[index].textContent);
+	
+        const idCartProduct = cartProduct.findIndex(item => item.id === productId);
+		
+		if (idCartProduct !== -1) {
+			cartProduct[idCartProduct].quantity += quantityNumber;
+			} else {
+			const objProduct = {
+				id: productId,
+				image: productImage,
+				quantity: quantityNumber,
+			};
+			cartProduct.push(objProduct);
+		}
+		console.log(cartProduct);
+		renderCartItems();
+		animateProductToCart(productImage);
+	});
+});
     
 
 
