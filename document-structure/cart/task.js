@@ -29,26 +29,47 @@ btnProduct.forEach((button, index) => {
 	button.addEventListener('click', () => {
 		product = products[index];
 		const productId = product.dataset.id;
-		const productImage = product.querySelector('.product__image').getAttribute('src');
+		const productImg = product.querySelector('.product__image').getAttribute('src');
 		const quantityNumber = parseInt(numberProduct[index].textContent);
 	
-        const idCartProduct = cartProduct.findIndex(item => item.id === productId);
+        const idCartProduct = cartProduct.findIndex(e => e.id === productId);
 		
 		if (idCartProduct !== -1) {
 			cartProduct[idCartProduct].quantity += quantityNumber;
 			} else {
 			const objProduct = {
 				id: productId,
-				image: productImage,
+				image: productImg,
 				quantity: quantityNumber,
 			};
 			cartProduct.push(objProduct);
 		}
 		console.log(cartProduct);
-		renderCartItems();
-		animateProductToCart(productImage);
+		cartItems();
+		animProductToCart(productImg);
 	});
 });
+
+function cartItems() {
+	const cartContainer = document.querySelector('.cart__products');
+	cartContainer.innerHTML = '';
+	cartProduct.forEach(element => {
+		const cartProductElement = document.createElement('div')
+		cartProductElement.classList.add('cart__product');
+		cartProductElement.dataset.id = element.id;
+
+		const productImg = document.createElement('img');
+		productImg.classList.add('cart__product-image');
+		productImg.src = element.image;
+		cartProductElement.appendChild(productImg);
+		
+		const productCount = document.createElement('div');
+		productCount.classList.add('cart__product-count');
+		productCount.textContent = element.quantity;
+		cartProductElement.appendChild(productCount);
+		cartContainer.appendChild(cartProductElement);
+	});
+}
     
 
 
