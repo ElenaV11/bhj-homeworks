@@ -46,7 +46,6 @@ btnProduct.forEach((button, index) => {
 		}
 		console.log(cartProduct);
 		cartItems();
-		animProductToCart(productImg);
 	});
 });
 
