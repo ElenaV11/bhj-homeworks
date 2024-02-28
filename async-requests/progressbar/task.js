@@ -1,5 +1,5 @@
 const progress = document.getElementById('progress');
-const form = document.querySelector('#form');
+const form = document.getElementByIdr('form');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
